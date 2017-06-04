@@ -238,6 +238,7 @@
     }
     
     templateString = [templateString stringByReplacingOccurrencesOfString:@"{PROPERTIES}" withString:propertyString];
+    templateString = [templateString stringByReplacingOccurrencesOfString:@"internalBaseClass" withString:[classObject.className lowercaseCamelcaseString]];
     
     return templateString;
 }
@@ -399,6 +400,7 @@
     templateString = [templateString stringByReplacingOccurrencesOfString:@"{COPYWITHZONE}" withString:nsCopyingString];
     templateString = [templateString stringByReplacingOccurrencesOfString:@"{DEALLOC}" withString:deallocString];
     templateString = [templateString stringByReplacingOccurrencesOfString:@"{CLASSNAME}" withString:classObject.className];
+    templateString = [templateString stringByReplacingOccurrencesOfString:@"internalBaseClass" withString:[classObject.className lowercaseCamelcaseString]];
     
     templateString = [self processHeaderForString:templateString];
     

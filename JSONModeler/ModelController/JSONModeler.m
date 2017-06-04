@@ -167,7 +167,7 @@
             if ([tempPropertyName isEqualToString:@""]) {
                 tempPropertyName = [NSString stringWithFormat:@"myProperty%lu", ++numUnnamedProperties];
             }
-            tempPropertyObject.name = tempPropertyName;
+            tempPropertyObject.name = [NSString stringWithFormat:@"%@%@", [tempClass.className lowercaseCamelcaseString], [tempPropertyName uppercaseCamelcaseString]];
             
             [tempPropertyObject setIsAtomic:NO];
             [tempPropertyObject setIsClass:NO];
